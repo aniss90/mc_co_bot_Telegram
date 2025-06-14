@@ -2,7 +2,7 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import os
 
-# الحصول على التوكن من متغير البيئة
+# التوكن من متغيرات البيئة
 TOKEN = os.environ.get("BOT_TOKEN")
 
 # أمر /start
