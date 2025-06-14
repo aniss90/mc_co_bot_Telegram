@@ -2,10 +2,8 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import os
 
-# التوكن من متغيرات البيئة
 TOKEN = os.environ.get("BOT_TOKEN")
 
-# أمر /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("مرحباً! أنا بوتك ✨")
 
