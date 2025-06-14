@@ -1,11 +1,13 @@
-from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram import Update
+
 import os
 
-TOKEN = os.getenv("BOT_TOKEN")
+# استخدم توكن من متغيرات البيئة
+TOKEN = os.environ.get("BOT_TOKEN")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("السلام عليكم! ✅ البوت شغال.")
+    await update.message.reply_text("مرحبًا بك في البوت!")
 
 if __name__ == '__main__':
     app = ApplicationBuilder().token(TOKEN).build()
