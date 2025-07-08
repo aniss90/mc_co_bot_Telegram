@@ -7,7 +7,9 @@ const TOKEN = '7932950331:AAGkYxQOlV04JBjXuvDW3_8qjvaE8TTnXNc';
 const bot = new Telegraf(TOKEN);
 
 // 🟨 تحميل مفتاح Firebase من متغير البيئة
-const serviceAccount = JSON.parse(process.env.FIREBASE_KEY_JSON);
+const serviceAccount = JSON.parse(
+  process.env.FIREBASE_KEY_JSON.replace(/\\n/g, '\n')
+);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
